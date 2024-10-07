@@ -9,7 +9,6 @@ app.get('/data', async (req, res) => {
         const data = await getTablesData();
         res.json(data);
     } catch(err) {
-        console.log(res);
         res.status(500).json({error: err.message});
     }
 });
@@ -20,7 +19,6 @@ app.get('/data/:tableId', async (req, res) => {
         const data = await getTableData(tableId);
         res.json(data);
     } catch(err) {
-        console.log(res);
         res.status(500).json({error: err.message});
     }
 })
@@ -31,7 +29,6 @@ app.get('/schema/:tableId', async (req, res) => {
         const data = await getTableSchema(tableId);
         res.json(data);
     } catch(err) {
-        console.log(res);
         res.status(500).json({error: err.message});
     }
 })
