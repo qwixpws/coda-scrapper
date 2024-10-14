@@ -30,3 +30,11 @@ export async function getTableSchema(tableId) {
     });
     return response.json();
 }
+
+export async function getTableRows(tableId) {
+    const response = await fetch(`${CODA_API_BASE_URL}/docs/${DOC_ID}/tables/${tableId}/rows`, {
+        method: 'GET',
+        headers
+    });
+    return response.json();
+}
